@@ -97,8 +97,9 @@ Definidos em [`EtapaExecucao`](../src/main/java/br/com/oficina/diagnosticoreparo
 - **Controle otimista:** a primeira gravação usa `attribute_not_exists(numeroOs)`, e as seguintes usam `versao = :versaoLida`. Se outra requisição alterou o item antes, o DynamoDB recusa a escrita e a mensagem volta para a fila SQS para nova tentativa.
 - **Idempotência:** antes de aplicar um comando, o serviço confere se o `messageId` já está em `mensagensProcessadas`. Se estiver, o comando é ignorado. A lista guarda só os últimos 20 ids, para o item não crescer sem limite.
 - **Leitura consistente:** a busca por `numeroOs` usa `ConsistentRead = true`. A consulta da fila pelo GSI é eventualmente consistente, o que é suficiente para a listagem do técnico.
+> **Defnição:** Idempotência é a propriedade de uma operação que produz o mesmo resultado final, mesmo que seja executada várias vezes com os mesmos dados de entrada.
 
-## 6. Padrões de acesso
+## 6. Padrões de acessos
 
 | Operação do serviço | Chamada DynamoDB |
 |---|---|
@@ -107,4 +108,4 @@ Definidos em [`EtapaExecucao`](../src/main/java/br/com/oficina/diagnosticoreparo
 | Consultar uma execução (`GET /execucoes/{numeroOs}`) | `GetItem` por `numeroOs` |
 | Listar a fila (`GET /execucoes/fila?etapa=...`) | `Query` no `etapa-entradaFilaEm-index` |
 
-Não há `Scan` no código da aplicação. Como ver os dados pela CLI ou pelo console da AWS: [README, seção 7](../README.md#7-banco-de-dados-dynamodb).
+Não há `Scan` no código da aplicação. Como ver os dados pela CLI ou pelo console da AWS:.[README.md - seção: 7. Banco de dados (DynamoDB)](../README.md)
