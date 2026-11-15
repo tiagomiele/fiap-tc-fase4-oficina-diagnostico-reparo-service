@@ -1,6 +1,6 @@
-# Serviço de Diagnóstico e Reparo — Oficina Fase 4
+> Documentação central da Challenge Fase 4 em: [fiap-tc-fase4-oficina-os-service](https://github.com/tiagomiele/fiap-tc-fase4-oficina-os-service).
 
-> Tech Challenge FIAP SOAT — Fase 4. Documentação central da solução: [`fiap-tc-fase4-oficina-os-service`](https://github.com/tiagomiele/fiap-tc-fase4-oficina-os-service#readme).
+# Oficina Fase 4 - Serviço de Diagnóstico e Reparo
 
 ## 1. Objetivo de negócio
 
@@ -12,7 +12,7 @@ Este serviço organiza o **trabalho do técnico** na oficina:
 
 Se o cliente rejeitar o orçamento pedindo para **refazer**, a OS volta para a fila de diagnóstico, marcada como retrabalho.
 
-## 2. Requisitos atendidos
+## 2. Requisitos a serem atendidos
 
 **Funcionais**
 
@@ -74,9 +74,9 @@ O técnico acessa direto pelo Load Balancer do serviço, sem passar pelo API Gat
 
 ![Etapas do trabalho do técnico e quem dispara cada mudança](docs/assets/etapas-execucao.png)
 
-## 5. Participação na Saga
+## 5. Participação na Saga Orquestrada da OS (Odem de Serviço).
 
-Contrato completo: [`fiap-tc-fase4-oficina-os-service/docs/saga/contrato-mensagens.md`](https://github.com/tiagomiele/fiap-tc-fase4-oficina-os-service/blob/homolog/docs/saga/contrato-mensagens.md).
+Contrato completo: [`fiap-tc-fase4-oficina-os-service/docs-fase4/saga/contrato-mensagens.md`](https://github.com/tiagomiele/fiap-tc-fase4-oficina-os-service/blob/homolog/docs-fase4/saga/contrato-mensagens.md).
 
 | Recebe (fila `oficina-<env>-diagnostico-reparo-comandos`) | Efeito |
 |---|---|

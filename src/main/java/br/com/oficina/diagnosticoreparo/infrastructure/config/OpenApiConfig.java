@@ -27,7 +27,7 @@ public class OpenApiConfig {
         .info(
             new Info()
                 .title("Serviço de Diagnóstico e Reparo")
-                .version("v1")
+                .version("v1.1")
                 .description(DESCRICAO))
         .components(
             new Components()
