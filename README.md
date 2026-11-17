@@ -220,13 +220,13 @@ Depois, faz um smoke test do `/actuator/health/readiness` e publica a URL no res
 
 ### Evidência de cobertura de testes
 
-O build falha se a cobertura ficar abaixo de 80% (JaCoCo, `jacoco.minimum.coverage = 0.80` no `pom.xml`). Último CI verde em `homolog` (02/11/2026, 39 testes):
+O build falha se a cobertura ficar abaixo de 80% (JaCoCo, `jacoco.minimum.coverage = 0.80` no `pom.xml`). Último CI verde na `main` (15/11/2026, 39 testes):
 
 | Linhas | Instruções | Branches | Relatório |
 |---|---|---|---|
-| 99,4% | 99,2% | 92,5% | artefato `jacoco-report` do [run 41476675173](https://github.com/tiagomiele/fiap-tc-fase4-oficina-diagnostico-reparo-service/actions/runs/41476675173) |
+| 99,4% | 99,2% | 92,5% | artefato `jacoco-report` do [Run 43755583520](https://github.com/tiagomiele/fiap-tc-fase4-oficina-diagnostico-reparo-service/actions/runs/43755583520) |
 
-Quality Gate do SonarCloud: [painel do projeto](https://sonarcloud.io/summary/overall?id=tiagomiele_fiap-tc-fase4-oficina-diagnostico-reparo-service&branch=homolog). Para gerar o relatório local: `./mvnw verify` e abra `target/site/jacoco/index.html`.
+Quality Gate do SonarCloud: [painel do projeto](docs/Evidencias/Quality-Gate-Diagnostico-e-Reparo.pdf)). Para gerar o relatório local: `./mvnw verify` e abra `target/site/jacoco/index.html`.
 
 ## 11. Observabilidade
 
